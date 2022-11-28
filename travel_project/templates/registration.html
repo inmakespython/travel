@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body style="background-image:url('{% static 'images/sky_bg.jpg' %}');
+                       background-repeat:no-repeat;background-size:100%"><br>
+     <h1 align="center" style="color:LavenderBlush">REGISTER HERE</h1>
+     <form align="center" action="register" method="post">
+         {% csrf_token %}
+         USERNAME&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="username" placeholder="Enter your username"><br><br>
+         FIRST NAME&nbsp;&nbsp;&nbsp;<input type="text" name="first_name" placeholder="Enter your first name"><br><br>
+         LAST NAME&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="last_name" placeholder="Enter your last name"><br><br>
+         EMAIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <input type="email" name="email" placeholder="Enter your email address"><br><br>
+         PASSWORD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="password" placeholder="Enter your password"><br><br>
+         &nbsp;&nbsp;PASSWORD AGAIN&nbsp;<input type="password" name="password1" placeholder="Confirm your password">
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+         <input type="submit" value="REGISTER">
+     </form>
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}
+</body>
+</html>
